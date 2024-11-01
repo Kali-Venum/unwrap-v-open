@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* font-family: 'Poppins', sans-serif; */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/*---------------------- chackbox design-------------------------- */
+
+.common-checkbox input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.common-checkbox label {
+  position: relative;
+  cursor: pointer;
+}
+
+.common-checkbox label:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #e46f33;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 8px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+
+.common-checkbox input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  width: 5px;
+  height: 11px;
+  border: solid #e46f33;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* -----------------chackbox design----------------- */
+
+/* Pagination class start*/
+
+.pagination {
+  list-style: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #133940;
+  border-radius: 50%;
+  font: bold;
+  color: white;
+}
+
+.page-item {
+  list-style: none;
+  padding: 6px 12px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+/* pagination class end */
+.Pagination-wrap a {
+  color: gray;
+}
+.Pagination-wrap .active a {
+  color: #fff;
+}
+.sidebar-list svg.op {
+  position: absolute;
+  z-index: 9;
+  color: #fff;
+  font-size: 24px;
+  top: 10px;
+}
+svg.op {
+  position: absolute;
+  z-index: 9;
+  font-size: 23px;
+  top: 4%;
+  left: 2%;
+}
+.open .sidebar-list {
+  transition: 250ms ease-out;
+}
+.close .sidebar-list {
+  transform: translateX(-320px);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  max-width: 320px;
+  box-shadow: 4px 0 27px rgba(0, 0, 0, 0.11);
+  background-color: #202020;
+  padding-top: 28px;
+  margin: 0;
+  display: block;
+  width: 100%;
+  padding-left: 10px;
+  transition: 250ms ease-in;
+}
+.open .sidebar-list {
+  transform: translateX(0px);
+}
+.open .op {
+  display: none;
+}
+.open .cl {
+  display: block;
+  position: absolute;
+  font-size: 33px;
+  color: #fff;
+  top: 2%;
+  left: 3%;
+  z-index: 999;
+}
+/* .sidebar-list{padding-top: 50px;} */
+.sidebar-list {
+  z-index: 99;
+}
+.close .cl {
+  display: none;
+}
+.close .op {
+  color: #133940;
+}
+/* .add-gas-frm ul{height: 150px;} */
+
+/* Terms and conditions with privecy policy CSS */
+.ck-content {
+  height: 35vh;
+}
+/* Terms and conditions with privecy policy CSS */
+
+/* Add & update gas station css */
+.fild-box input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  width: 148px;
+  height: 46px;
+  cursor: pointer;
+}
+
+.fild-box input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
+}
+.fild-box span svg {
+  color: #fff;
+}
+/* Add & update gas station css */
+
+
+/* clears the ‘X’ from Internet Explorer */
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}

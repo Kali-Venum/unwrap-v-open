@@ -1,0 +1,9 @@
+#testing---
+version : '3.8'
+
+services : 
+  viton :
+     build : .
+     ports :
+         - "3051:3050"
+

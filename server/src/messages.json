@@ -1,0 +1,39 @@
+{
+  "LOGIN_SUCCESS": "Success.",
+
+  "USER_ALREADY_EXISTS": "User already exists",
+
+  "EMAIL_NOT_REGISTERED": "Email is not registered.",
+
+  "INVALID_EMAIL_AND_PASSWORD": "Invalid email or password",
+
+  "PROJECT_CREATED": "Success",
+
+  "PROJECT_EXISTS_WITH_SAME_NAME": "Already have a project with the same name.",
+
+  "MODELS_FOUND": "Models found successfully.",
+
+  "SUCCESS": "Success",
+
+  "USER_NOT_FOUND": "User not found.",
+
+  "USER_FOUND": "User found successfully.",
+
+  "USER_NOT_VERIFIED": "User not verified. Please verify.",
+
+  "USER_VERIFIED_SUCCESS": "User verified successfully",
+
+  "OTP_SENT_SUCCESS": "OTP sent successfully on entered email.",
+
+  "INVALID_OTP": "Invalid OTP",
+
+  "IMAGE_UPLOADED": "Image uploaded successfully.",
+
+  "PROJECT_UPDATED": "Project updated successfully.",
+
+  "PROJECT_NOT_FOUND": "Project not found.",
+  
+  "PLANS_FETCHED" : "Plan fetched successfully",
+
+  "PLAN_CREATED": "Plan ctreated."
+}

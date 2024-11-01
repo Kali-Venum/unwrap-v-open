@@ -1,0 +1,734 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Viton API",
+    "description": "API listing of viton.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3050",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "apiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization",
+      "description": "Bearer authentication token"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "Login API",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "User login API.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "example": "viton-1@yopmail.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "12345678A"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "Registration API",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "User registration API.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "First name of the user"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Last name of the user"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "example@example.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "12345678A"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/auth/token/refresh": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "Refresh-Token API",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Refresh-Token API.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "refreshToken": {
+                  "type": "string",
+                  "example": "refresh token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/auth/forgot-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "Forget Password API",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Forget Password API.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "example": "example@example.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/auth/reset-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "Refresh-Token API",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Refresh-Token API.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "otp": {
+                  "type": "string",
+                  "example": "123456"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "12345678A"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/auth/request-verification": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "resend otp API",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "resend otp API.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "example": "example@example.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/auth/verify-user": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "Verify user API",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Verify user API.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "otp": {
+                  "type": "string",
+                  "example": "123456"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "example@example.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/users/user": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "description": "Get a details of a user by token.",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/project/create": {
+      "post": {
+        "tags": [
+          "Project"
+        ],
+        "description": "Create a project API",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Create a project API.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "projectName": {
+                  "type": "string",
+                  "example": "Your project name"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/project/list": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "description": "Create a project API",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "description": "Enter the page number.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dataPerPage",
+            "in": "query",
+            "description": "Enter the data count for per page.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/project/delete/{projectId}": {
+      "delete": {
+        "tags": [
+          "Project"
+        ],
+        "description": "Delete a project API",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Delete a project API.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "projectId": {
+                  "type": "string",
+                  "example": "Your project ID"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/project/update": {
+      "patch": {
+        "tags": [
+          "Project"
+        ],
+        "description": "Update a project API",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "description": "Update a project API.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "projectId": {
+                  "type": "string",
+                  "example": "Your project ID"
+                },
+                "modelImagePath": {
+                  "type": "string",
+                  "example": "Enter the model image path"
+                },
+                "productImagePath": {
+                  "type": "string",
+                  "example": "Enter the product image path"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/project/get/{projectId}": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "description": "Get a project by id API",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Get a project by ID API.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "projectId": {
+                  "type": "string",
+                  "example": "Your project ID"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/image/upload": {
+      "post": {
+        "tags": [
+          "Upload"
+        ],
+        "description": "Image upload API",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "image",
+            "in": "formData",
+            "type": "file",
+            "required": true,
+            "description": "Image file to upload."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/model/list": {
+      "post": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/dashboard/data": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "description": "Get Dashboard Data",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/stripe/create/subscription/plan": {
+      "post": {
+        "tags": [
+          "Stripe"
+        ],
+        "description": "Create a project API",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "description": "Create a project API.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "planName": {
+                  "type": "string",
+                  "example": "Your plan name"
+                },
+                "currency": {
+                  "type": "string",
+                  "example": "Your currency"
+                },
+                "price": {
+                  "type": "number",
+                  "example": 0
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/stripe/get/subscription/plans": {
+      "get": {
+        "tags": [
+          "Stripe"
+        ],
+        "description": "Fetch all subscription plans API",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/stripe/subscribe/plan": {
+      "post": {
+        "tags": [
+          "Stripe"
+        ],
+        "description": "Subscribe a plan",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/stripe/subscribe/plan/session-checkout": {
+      "post": {
+        "tags": [
+          "Stripe"
+        ],
+        "description": "Subscribe a plan using session checkout.",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "description": "subscribe a plan using stripe session checkout.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "priceId": {
+                  "type": "string",
+                  "example": "Your price id."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/stripe/webhook": {
+      "post": {
+        "tags": [
+          "Stripe"
+        ],
+        "description": "Register the webhook.",
+        "parameters": [
+          {
+            "name": "stripe-signature",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "description": "Register a webhook in the stripe",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "event": {
+                  "type": "string",
+                  "example": "Success or updated"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    }
+  }
+}
